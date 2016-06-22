@@ -1,0 +1,54 @@
+﻿@model MvcProj.Models.myPosts
+
+
+@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+
+<div class="col-md-1"></div>
+<div class="col-md-6" style="margin-top:8%">
+    <div class="well">
+
+        <form class="form" method="post" action="postStatus">
+
+            <div class="input-group text-center">             
+                  
+                @Html.TextBoxFor(m => Model.m.description, new { placeholder = "Share to Motivate Others", @class = "form-control input-lg" })
+                <span class="input-group-btn">
+                    <button class="btn btn-lg btn-custom btn-danger" type="submit">Post</button>
+
+                </span>
+                
+            </div>
+        </form>
+
+    </div>
+    <div class="panel panel-default">
+        
+      
+         @foreach (var a in Model.list)
+        {
+            
+        
+        <div class="panel-heading">
+            <h4>@a.userRoll</h4>
+        </div>
+        <div class="panel-body">
+            @a.description
+            <br>
+            <form>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default">
+                            <i class="glyphicon glyphicon-heart"></i>
+                        </button>
+                    </div>
+                    <input class="form-control" type="text" placeholder="Add a comment.." />
+                </div>
+            </form>
+            <br>
+        </div>
+        }
+    </div>
+</div>

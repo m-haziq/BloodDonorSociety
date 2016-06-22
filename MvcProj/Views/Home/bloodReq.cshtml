@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+
+<div class="col-md-2"></div>
+<div class="col-md-6">
+    <form class="form-inline" style="margin-top:30%">
+        
+        <div class="form-group-lg row " style="margin-left:30%">
+            <select class="dropdown-toggle btn-custom btn-default" id="MovieType" name="MovieType">
+                <option  value="">Choose Group</option>
+
+                <option value="A+">A+</option>
+                <option value="B+">B+</option>
+                <option value="O+">O+</option>
+                <option value="AB+">AB+</option>
+                <option value="A-">A-</option>
+                <option value="B-">B-</option>
+                <option value="O-">O-</option>
+                <option value="AB-">AB-</option>
+
+            </select>
+
+        </div>
+    </form>
+    <div class="col-md-12" style="margin-top:10%;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;text-emphasis-color:antiquewhite">
+        <table class="table table-bordered table-hover" id="donors">
+            
+        </table>
+        @Scripts.Render("~/bundles/jquery")
+        <script>
+            $(document).ready(function () {
+
+                $('#MovieType').change(function () {
+
+                    var type = $('#MovieType').val();
+                    alert(type);
+                    $("#donors tr").remove();
+                    $.getJSON("/home/ShowDonors?MovieType=" + type, function (data) {
+
+                        $.each(data, function (i, donor) {
+                            $("#donors").append('<tr><td>' + donor.n + '</td><td>' + donor.b + '</td><td>' + donor.r + '</td></tr>');
+                        });
+                    });
+
+                });
+
+            });
+
+        </script>
+
+    </div>
+
+</div>

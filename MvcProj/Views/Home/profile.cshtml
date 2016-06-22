@@ -1,0 +1,19 @@
+﻿@model MvcProj.Models.myPosts
+
+
+@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<div class="col-md-1"></div>
+<div class="col-md-2" style="margin-top:10%">
+    <img src="~\Files\bsef12m004@pucit.edu.pk" width="200px" />
+
+</div>
+<div class="col-md-1"></div>
+<div class="col-md-4" style="margin-top:10%; font-family:Calibri; font-size:large;font-weight:900">
+
+    Name: @Model.u.name <br />
+    Roll Number: @Model.u.rollNumber <br />
+    Blood Group: @Model.u.bloodGroup <br />
+</div>

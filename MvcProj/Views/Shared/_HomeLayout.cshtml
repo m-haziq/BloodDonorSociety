@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#abc">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <img height="20" width="50" alt="Brand" class="navbar pull-left " sizes="10" src="~/images/logo.png">
+                </div>
+
+                <div class="collapse navbar-collapse" id="abc">
+                    <ul class="nav navbar-nav" style="margin-left:3%">
+                        <li class="active"><a href="../../Home/home">Home</a></li>
+                        <li><a href="../../Home/profile">Profile</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav" style="margin-left:25%">
+                        <li><a class="navbar-brand" href="a" style="color:#c60000; text-align:center">PUCIT BLOOD SOCIETY</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" action="/Home/signout" method="post">
+                        <button type="submit" class="btn btn-default btn-custom navbar-btn pull-right">Sign Out</button>
+                    </form>
+</div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 " style="background-color:#900000;height:620px;align-self:stretch">
+                <ul class="list-group" style="margin-top:150%;">
+                    <li><a href="../../Home/bloodReq" style="text-align:center" class="list-group-item btn-danger">Request For Blood</a></li>
+                    <li><a href="../../Home/News" style="text-align:center" class="list-group-item btn-danger">News</a></li>
+                    <li><a href="../../Home/history" style="text-align:center" class="list-group-item btn-danger">Check Your History</a></li>
+                </ul>
+            </div>            
+            @RenderBody()
+        </div>
+
+    </div>
+
+    <footer class="panel-footer">
+        <div class="container-fluid">
+            <a class="btn-primary btn-lg" href="www.facebook.com/capricorn159" style="">f</a>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+﻿@model MvcProj.Models.myPosts
+
+@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+
+
+
+<div class="col-md-1"></div>
+<div class="col-md-6" style="margin-top:8%">
+    <div class="panel panel-default">
+
+
+        @foreach (var a in Model.list)
+            
+        {
+            if(a.userRoll == @Session["uid"])
+            { 
+            <div class="panel-heading">
+                <h4>@a.userRoll</h4>
+            </div>
+            <div class="panel-body">
+                @a.description
+                <br>
+                <form>
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default">
+                                <i class="glyphicon glyphicon-heart"></i>
+                            </button>
+                        </div>
+                        <input class="form-control" type="text" placeholder="Add a comment.." />
+                    </div>
+                </form>
+                <br>
+            </div>
+            }
+        }
+    </div>
+</div>
